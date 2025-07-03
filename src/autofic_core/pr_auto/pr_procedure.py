@@ -221,6 +221,9 @@ class PRProcedure:
             time.sleep(0.05)
             return True
         else:
+            print("[ERROR] Failed to create PR")
+            print(f"Status Code: {pr_resp.status_code}")
+            print(f"Response: {pr_resp.text}")
             return False
     
     def create_pr(self):
